@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> JHAPKI</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css"/>
+    <script type="text/javascript" src="howler.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        .container.main{
+            margin-top: 7.0em;
+        }
+        h1{
+            margin-top: 3.0em;
+        }
+        i.icon{
+            font-size: 2.0em;
+        }
+    </style>
+ 
+</head>
+<body>
+<div class="ui fixed inverted menu">
+    <div class="ui container">
+        <div class="header item">
+            <i class="dashboard icon"></i>JHAPKI
+        </div>
+      
+    </div>
+
+</div>
+
+    <div class= "ui main container segment">
+        <div class ="ui huge header">JHAPKI</div>
+        <form id="form2" class= "ui fluid form" action="/k" method="POST">
+            <div class="field"> <input id="howler-stop" class="button ui primary" type="submit" value="I WOKE UP!" ></div>
+        </form>
+    </div>
+      <form id="form" class= "ui fluid form" action="/k1" method="POST">
+
+        </form>
+       <script>
+        $(document).ready(function(){
+        var howler_example = new Howl({
+  src: ['loud_noise_rtone.mp3'],
+  volume: 0.8
+});
+
+        howler_example.play();
+   
+
+    $("#howler-stop").on("click", function(){
+        howler_example.stop();
+        restart();
+    });
+var auto_refresh = setInterval(function() { submitform(); }, 7000);
+// Form submit function.
+function submitform(){
+
+document.getElementById("form").submit();
+
+}
+function restart(){
+
+document.getElementById("form2").submit();
+
+}
+        
+
+
+      });
+    </script>
+</body>
+</html>
